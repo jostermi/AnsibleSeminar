@@ -8,7 +8,7 @@
 
     - name: Provision a set of instances
       ec2:
-         key_name: seminarkeypem.pem
+         key_name: seminarkey.pem
          group: launch-wizard-4
          region: us-east-1
          zone: us-east-1a
