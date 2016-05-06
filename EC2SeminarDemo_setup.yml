@@ -5,7 +5,7 @@
   gather_facts: False
   vars:
     instance:
-      - 'i-aef45678'
+      - i-aef45678
       
   tasks:
 
