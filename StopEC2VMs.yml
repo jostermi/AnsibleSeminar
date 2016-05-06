@@ -1,4 +1,4 @@
-# demo_setup.yml
+# StopEC2VMs.yml
 
 - hosts: localhost
   connection: local
@@ -9,7 +9,7 @@
       
   tasks:
 
-    - name: Provision a set of instances
+    - name: Stop a set of instances
       ec2:
          instance_ids: '{{ instance }}'
          key_name: seminarkey.pem
