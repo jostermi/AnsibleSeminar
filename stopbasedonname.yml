@@ -1,0 +1,24 @@
+# StopEC2VMs.yml
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: Stop a set of instances
+      ec2:
+         key_name: seminarkey.pem
+         group: launch-wizard-4
+         region: us-east-1
+         zone: us-east-1a
+         instance_type: t2.micro
+         image: ami-2051294a
+         vpc_subnet_id: subnet-fe900f89
+         state: stopped
+         wait: true
+         count_tag:
+            Name: Seminar
+         instance_tags:
+            Name: Seminar
+      register: ec2
