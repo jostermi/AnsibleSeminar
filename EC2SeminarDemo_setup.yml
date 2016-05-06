@@ -4,14 +4,13 @@
   connection: local
   gather_facts: False
   vars:
-    instance:
-      - i-aef45678
+    instance_id: i-dac5473b
       
   tasks:
 
     - name: Provision a set of instances
       ec2:
-         instance_ids: '{{ instance }}'
+         instance_id: '{{ instance_id }}'
          key_name: seminarkey.pem
          group: launch-wizard-4
          region: us-east-1
