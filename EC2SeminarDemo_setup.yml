@@ -20,7 +20,6 @@
          image: ami-2051294a
          vpc_subnet_id: subnet-fe900f89
          wait: true
-         exact_count: 1
          count_tag:
             Name: Seminar
          instance_tags:
