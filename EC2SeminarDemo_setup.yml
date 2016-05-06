@@ -11,8 +11,10 @@
          key_name: seminarkeypem.pem
          group: launch-wizard-4
          region: us-east-1
+         zone: us-east-1a
          instance_type: t2.micro
          image: ami-2051294a
+         vpc_subnet_id: subnet-fe900f89
          wait: true
          exact_count: 1
          count_tag:
@@ -20,5 +22,3 @@
          instance_tags:
             Name: Seminar
       register: ec2
-
-
