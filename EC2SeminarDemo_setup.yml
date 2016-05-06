@@ -4,7 +4,7 @@
   connection: local
   gather_facts: False
   vars:
-    instance_ids: i-dac5473b
+    instance_ids: ['i-dac5473b']
       
   tasks:
 
