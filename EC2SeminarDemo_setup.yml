@@ -1,0 +1,24 @@
+# demo_setup.yml
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: Provision a set of instances
+      ec2:
+         key_name: seminarkeypem.pem
+         group: launch-wizard-4
+         region: us-east-1
+         instance_type: t2.micro
+         image: ami-2051294a
+         wait: true
+         exact_count: 1
+         count_tag:
+            Name: Seminar
+         instance_tags:
+            Name: Seminar
+      register: ec2
+
+
