@@ -9,7 +9,7 @@
     - name: Provision a set of instances
       ec2:
          aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY') }}"
-         aws_secret_key: "{{ lookup('env', 'AWS_ACCESS_KEY') }}"
+         aws_secret_key: "{{ lookup('env', 'AWS_SECRET_KEY') }}"
          key_name: seminarkey.pem
          group: launch-wizard-4
          region: us-east-1
