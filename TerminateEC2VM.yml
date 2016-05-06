@@ -1,0 +1,28 @@
+# demo_setup.yml
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    instance:
+      - 'i-d7770d50'
+      
+  tasks:
+
+    - name: Provision a set of instances
+      ec2:
+         instance_ids: '{{ instance }}'
+         key_name: seminarkey.pem
+         group: launch-wizard-4
+         region: us-east-1
+         zone: us-east-1a
+         instance_type: t2.micro
+         image: ami-2051294a
+         vpc_subnet_id: subnet-fe900f89
+         state: absent
+         wait: true
+         count_tag:
+            Name: Seminar
+         instance_tags:
+            Name: Seminar
+      register: ec2
