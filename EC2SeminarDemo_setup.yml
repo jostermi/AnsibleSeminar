@@ -3,11 +3,15 @@
 - hosts: localhost
   connection: local
   gather_facts: False
-
+  vars:
+    instance:
+      - 'i-aef45678'
+      - 'i-aef45679'
   tasks:
 
     - name: Provision a set of instances
       ec2:
+         instance_ids: '{{ instance }}'
          key_name: seminarkey.pem
          group: launch-wizard-4
          region: us-east-1
