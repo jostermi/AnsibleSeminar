@@ -1,1 +1,25 @@
 ---
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: Provision a set of instances
+      ec2:
+         aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY') }}"
+         aws_secret_key: "{{ lookup('env', 'AWS_SECRET_KEY') }}"
+         key_name: seminarkey.pem
+         group: launch-wizard-4
+         region: us-east-1
+         zone: us-east-1a
+         instance_type: m3.large
+         image: ami-e777708d
+         vpc_subnet_id: subnet-fe900f89
+         wait: true
+         count_tag:
+            Name: Seminar
+         instance_tags:
+            Name: Seminar
+      register: ec2
