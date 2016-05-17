@@ -1,0 +1,11 @@
+---
+# Variables listed here are applicable to all host groups
+
+USER_NAME 	: 'admin'
+
+CSR_IP : 10.10.10.100
+
+WEB_SERVER_HOSTNAME : CSRGROUP#
+
+
+sensor_rpm_version : 1.0.0-29.16934432
