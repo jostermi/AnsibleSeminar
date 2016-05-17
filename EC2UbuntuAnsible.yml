@@ -1,0 +1,24 @@
+# demo_setup.yml
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+      
+  tasks:
+
+    - yum:
+        name:
+          - http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+          - python-pip
+          - git
+        update_cache: yes
+        state: present
+
+   - pip:
+       name: 'git+http://github.com/ansible/ansible'
+       editable: no
+       state: present
+
+
+      
